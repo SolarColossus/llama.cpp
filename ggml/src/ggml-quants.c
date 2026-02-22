@@ -2,6 +2,7 @@
 // Ported from ik_llama.cpp - https://github.com/ikawrakow/ik_llama.cpp
 // MIT License - Copyright (C) 2024 Iwan Kawrakow
 
+#include <stdint.h>
 #define GGML_COMMON_IMPL_C
 #include "ggml-common.h"
 
@@ -2021,7 +2022,7 @@ static void quantize_row_q5_0_impl(const float * GGML_RESTRICT x, block_q5_0 * G
     }
 }
 
-size_t quantize_q5_0(const float * GGML_RESTRICT src, void * GGML_RESTRICT dst, int64_t nrow, int64_t n_per_row, const float * quant_weights) {
+size_t quantize_q5_0(const float * GGML_RESTRICT src, block_q5_0 * GGML_RESTRICT dst, int64_t nrow, int64_t n_per_row, const float * quant_weights) {
     if (!quant_weights) {
         quantize_row_q5_0_ref(src, dst, (int64_t)nrow*n_per_row);
         return nrow * ggml_row_size(GGML_TYPE_Q5_0, n_per_row);

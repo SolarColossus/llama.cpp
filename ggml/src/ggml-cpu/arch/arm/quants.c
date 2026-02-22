@@ -3594,6 +3594,62 @@ void ggml_vec_dot_iq2_s_q8_K(int n, float * GGML_RESTRICT s, size_t bs, const vo
 
 }
 
+void vec_dot_iq3_ks_q8_k(int n, float * s, size_t bs, const void * vx, size_t bx, const void * vy, size_t by, int nrc) {
+#if GGML_USE_IQK_MULMAT
+    if (iqk_mul_mat(1, 1, n, GGML_TYPE_IQ3_KS, vx, 0, GGML_TYPE_Q8_K, vy, 0, s, 0, 0, 1)) {
+        return;
+    }
+#endif
+    GGML_ASSERT(n%QK_K == 0);
+    GGML_ASSERT(nrc == 1);
+    GGML_UNUSED(bs);
+    GGML_UNUSED(bx);
+    GGML_UNUSED(by);
+
+    const block_iq3_ks * x = (const block_iq3_ks *)vx;
+    const block_q8_K  * y = (const block_q8_K *)vy;
+    const int nb = n / QK_K;
+    float sumf = 0;
+
+    for (int ibl = 0; ibl < nb; ++ibl) {
+        // Get global scale from IQ3_KS block header
+        const ggml_half * dptr = (const ggml_half *)x;
+        float d = GGML_FP16_TO_FP32(*dptr);
+        const block_iq3_ks * x_block = (const block_iq3_ks *)(dptr + 1);
+
+        // Calculate per-block scales (matches dequantize_row_iq3_ks logic)
+        float dl[8];
+        for (int j = 0; j < 4; ++j) {
+            int ls1 = (x_block[ibl].scales[j] & 0xf) | (((x_block[ibl].extra >> (j+0)) & 1) << 4);
+            int ls2 = (x_block[ibl].scales[j] >>  4) | (((x_block[ibl].extra >> (j+4)) & 1) << 4);
+            dl[j+0] = d*(ls1 - 16);
+            dl[j+4] = d*(ls2 - 16);
+        }
+
+        const uint8_t * qs = x_block[ibl].qs;
+        const uint8_t * qh = x_block[ibl].qh;
+        const int8_t  * qy = y[ibl].qs;
+        float sumi = 0;
+
+        // Process blocks (matches dequantize_row_iq3_ks block structure)
+        for (int i128 = 0; i128 < QK_K/128; ++i128) {
+            for (int ib = 0; ib < 4; ++ib) {
+                const int8_t * values = iq3nl_values + ((x_block[ibl].extra >> (8 + (4*i128+ib)) & 1) << 3);
+                for (int j = 0; j < 32; ++j) {
+                    int q_val = ((qs[j] >> 2*ib) & 3) | (((qh[j] >> (4*i128+ib)) & 1) << 2);
+                    sumi += qy[j] * values[q_val] * dl[4*i128 + ib];
+                }
+                qy += 32;
+            }
+            qs += 32;
+        }
+
+        sumf += sumi;
+    }
+
+    *s = sumf;
+}
+
 void ggml_vec_dot_iq3_xxs_q8_K(int n, float * GGML_RESTRICT s, size_t bs, const void * GGML_RESTRICT vx, size_t bx, const void * GGML_RESTRICT vy, size_t by, int nrc) {
     assert(n % QK_K == 0);
     assert(nrc == 1);
@@ -4049,4 +4105,3 @@ void ggml_vec_dot_iq4_xs_q8_K(int n, float * GGML_RESTRICT s, size_t bs, const v
     ggml_vec_dot_iq4_xs_q8_K_generic(n, s, bs, vx, bx, vy, by, nrc);
 #endif
 }
-

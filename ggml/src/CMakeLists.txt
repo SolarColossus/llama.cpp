@@ -189,6 +189,58 @@ if (GGML_BACKEND_DL AND NOT BUILD_SHARED_LIBS)
     message(FATAL_ERROR "GGML_BACKEND_DL requires BUILD_SHARED_LIBS")
 endif()
 
+set (GGML_SOURCES_IQK iqk/ks-quants.cpp iqk/iqk_cpu_ops.cpp)
+set (GGML_HEADERS_IQK iqk/include/iqk_config.h iqk/include/iqk_cpu_ops.h)
+if (GGML_IQK_MUL_MAT)
+    message(STATUS "Using optimized iqk matrix multiplications")
+    add_compile_definitions(GGML_USE_IQK_MULMAT)
+    set(GGML_SOURCES_IQK_MM iqk/iqk_mul_mat.cpp
+                            iqk/iqk_flash_attn.cpp
+                            iqk/fa/iqk_fa_576_512.cpp
+                            iqk/fa/iqk_fa_192_128.cpp
+                            iqk/fa/iqk_fa_192_192.cpp
+                            iqk/fa/iqk_fa_256_256.cpp
+                            iqk/fa/iqk_fa_128_128.cpp
+                            iqk/fa/iqk_fa_96_96.cpp
+                            iqk/fa/iqk_fa_64_64.cpp
+                            iqk/iqk_gemm_floats.cpp
+                            iqk/iqk_gemm_kquants.cpp
+                            iqk/iqk_gemm_ktquants.cpp
+                            iqk/iqk_gemm_iquants.cpp
+                            iqk/iqk_gemm_iqk_quants.cpp
+                            iqk/iqk_gemm_1bit.cpp
+                            iqk/iqk_gemm_legacy_quants.cpp)
+    set(GGML_HEADERS_IQK_MM iqk/iqk_mul_mat.h
+                            iqk/iqk_flash_impl.h
+                            iqk/fa/iqk_fa_templates.h
+                            iqk/iqk_gemm_floats.h
+                            iqk/iqk_gemm_kquants.h
+                            iqk/iqk_gemm_ktquants.h
+                            iqk/iqk_gemm_iquants.h
+                            iqk/iqk_gemm_iqk_quants.h
+                            iqk/iqk_gemm_1bit.h
+                            iqk/iqk_gemm_legacy_quants.h)
+    if (GGML_IQK_FLASH_ATTENTION)
+        message(STATUS "Enabling IQK Flash Attention kernels")
+        add_compile_definitions(GGML_IQK_FLASH_ATTENTION)
+        if (GGML_IQK_FA_ALL_QUANTS)
+            message(STATUS "Including all IQK FA kernels")
+            add_compile_definitions(GGML_IQK_FA_ALL_QUANTS)
+        endif()
+    else()
+        message(STATUS "Disabling IQK Flash Attention kernels")
+    endif()
+endif()
+
+add_library(iqk
+            ${GGML_SOURCES_IQK}       ${GGML_HEADERS_IQK})
+
+target_include_directories(iqk PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/iqk/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/../include
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
 add_library(ggml-base
             ../include/ggml.h
             ../include/ggml-alloc.h
@@ -213,6 +265,7 @@ set_target_properties(ggml-base PROPERTIES
 )
 
 target_include_directories(ggml-base PRIVATE .)
+target_link_libraries(ggml-base PRIVATE iqk)
 if (GGML_BACKEND_DL)
     target_compile_definitions(ggml-base PUBLIC GGML_BACKEND_DL)
 endif()
@@ -239,6 +292,7 @@ if (GGML_BACKEND_DIR)
 endif()
 
 target_link_libraries(ggml PUBLIC ggml-base)
+target_link_libraries(ggml PUBLIC iqk)
 
 if (CMAKE_SYSTEM_NAME MATCHES "Linux")
     target_link_libraries(ggml PRIVATE dl)

@@ -14,6 +14,7 @@
 #include "ops.h"
 #include "ggml.h"
 #include "common.h"
+#include "../iqk/include/iqk_quantize.hpp"
 
 #if defined(_MSC_VER) || defined(__MINGW32__)
 #include <malloc.h> // using malloc.h with MSC/MINGW
@@ -392,6 +393,19 @@ static const struct ggml_type_traits_cpu type_traits_cpu[GGML_TYPE_COUNT] = {
         .vec_dot                  = ggml_vec_dot_iq2_k_q8_K,
         .vec_dot_type             = GGML_TYPE_Q8_K,
         .nrows                    = 1,
+    },
+    [GGML_TYPE_IQ3_KS] = {
+//      .type_name                = "iq3_ks",
+//      .blck_size                = QK_K,
+//      .type_size                = sizeof(block_iq3_ks),
+//      .is_quantized             = true,
+//      .to_float                 = (ggml_to_float_t) dequantize_row_iq3_ks,
+        .from_float               = quantize_row_iq3_ks,
+//      .from_float_ref           = (ggml_from_float_t)quantize_row_iq3_ks_ref,
+        .vec_dot                  = vec_dot_iq3_ks_q8_k,
+        .vec_dot_type             = GGML_TYPE_Q8_K,
+        .nrows                    = 1,
+//      .row_meta_size            = 2,
     },
     [GGML_TYPE_IQ3_K] = {
         .from_float               = quantize_row_iq3_k,

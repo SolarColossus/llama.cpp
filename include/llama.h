@@ -161,7 +161,11 @@ extern "C" {
         LLAMA_FTYPE_MOSTLY_IQ5_K         = 141, // except 1d tensors, 5.5 bpw
         LLAMA_FTYPE_MOSTLY_IQ6_K         = 142, // except 1d tensors, 6.625 bpw
         // IDs 143-156 reserved
-
+        LLAMA_FTYPE_MOSTLY_IQ4_KS        = 145, // except 1d tensors
+        LLAMA_FTYPE_MOSTLY_IQ2_KS        = 147, // except 1d tensors
+        LLAMA_FTYPE_MOSTLY_IQ4_KSS       = 148, // except 1d tensors
+        LLAMA_FTYPE_MOSTLY_IQ5_KS        = 150, // except 1d tensors
+        LLAMA_FTYPE_MOSTLY_IQ3_KS        = 154, // except 1d tensors
         // refer to ik_llama.cpp for IDs 200+ (some are reserved)
 
         LLAMA_FTYPE_GUESSED = 1024, // not specified in the model file

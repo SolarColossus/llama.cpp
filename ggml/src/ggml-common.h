@@ -437,6 +437,15 @@ typedef struct {
 } block_iq2_k;
 static_assert(sizeof(block_iq2_k) == sizeof(ggml_half) + sizeof(uint16_t) + QK_K/32 + QK_K/4, "wrong iq2_k block size/padding");
 
+// IQ3_KS: 2-bit K quantization (GGML_TYPE_IQ3_KS = 156)
+typedef struct {
+    uint16_t extra;
+    uint8_t scales[QK_K/64];
+    uint8_t qs[QK_K/4];
+    uint8_t qh[QK_K/8];
+} block_iq3_ks;
+static_assert(sizeof(block_iq3_ks) == sizeof(uint16_t) + QK_K/64 + QK_K/4 + QK_K/8, "wrong iq3_ks block size/padding");
+
 // IQ3_K: 3-bit K quantization (GGML_TYPE_IQ3_K = 138)
 // 3.44 bpw (110 bytes / 256 values * 8 = 3.4375)
 typedef struct {
