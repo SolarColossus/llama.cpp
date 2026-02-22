@@ -364,6 +364,7 @@ class GGUFType:
 
 
 class MODEL_ARCH(IntEnum):
+<<<<<<< HEAD
     MMPROJ = auto()  # dummy arch for clip.cpp
     LLAMA = auto()
     LLAMA4 = auto()
@@ -483,6 +484,129 @@ class MODEL_ARCH(IntEnum):
     LLAMA_EMBED = auto()
     MAINCODER = auto()
     KIMI_LINEAR = auto()
+=======
+    MMPROJ           = auto() # dummy arch for clip.cpp
+    LLAMA            = auto()
+    LLAMA4           = auto()
+    DECI             = auto()
+    FALCON           = auto()
+    FALCON_H1        = auto()
+    BAICHUAN         = auto()
+    GROK             = auto()
+    GPT2             = auto()
+    GPTJ             = auto()
+    GPTNEOX          = auto()
+    MPT              = auto()
+    STARCODER        = auto()
+    REFACT           = auto()
+    BERT             = auto()
+    MODERN_BERT      = auto()
+    NOMIC_BERT       = auto()
+    NOMIC_BERT_MOE   = auto()
+    NEO_BERT         = auto()
+    JINA_BERT_V2     = auto()
+    JINA_BERT_V3     = auto()
+    BLOOM            = auto()
+    STABLELM         = auto()
+    QWEN             = auto()
+    QWEN2            = auto()
+    QWEN2MOE         = auto()
+    QWEN2VL          = auto()
+    QWEN3            = auto()
+    QWEN3MOE         = auto()
+    QWEN3NEXT        = auto()
+    QWEN3VL          = auto()
+    QWEN3VLMOE       = auto()
+    QWEN35           = auto()
+    QWEN35MOE        = auto()
+    PHI2             = auto()
+    PHI3             = auto()
+    PHIMOE           = auto()
+    PLAMO            = auto()
+    PLAMO2           = auto()
+    PLAMO3           = auto()
+    CODESHELL        = auto()
+    ORION            = auto()
+    INTERNLM2        = auto()
+    MINICPM          = auto()
+    MINICPM3         = auto()
+    GEMMA            = auto()
+    GEMMA2           = auto()
+    GEMMA3           = auto()
+    GEMMA3N          = auto()
+    GEMMA_EMBEDDING  = auto()
+    STARCODER2       = auto()
+    RWKV6            = auto()
+    RWKV6QWEN2       = auto()
+    RWKV7            = auto()
+    ARWKV7           = auto()
+    MAMBA            = auto()
+    MAMBA2           = auto()
+    JAMBA            = auto()
+    XVERSE           = auto()
+    COMMAND_R        = auto()
+    COHERE2          = auto()
+    DBRX             = auto()
+    OLMO             = auto()
+    OLMO2            = auto()
+    OLMOE            = auto()
+    OPENELM          = auto()
+    ARCTIC           = auto()
+    DEEPSEEK         = auto()
+    DEEPSEEK2        = auto()
+    CHATGLM          = auto()
+    GLM4             = auto()
+    GLM4_MOE         = auto()
+    GLM_DSA          = auto()
+    BITNET           = auto()
+    T5               = auto()
+    T5ENCODER        = auto()
+    JAIS             = auto()
+    JAIS2            = auto()
+    NEMOTRON         = auto()
+    NEMOTRON_H       = auto()
+    NEMOTRON_H_MOE   = auto()
+    EXAONE           = auto()
+    EXAONE4          = auto()
+    EXAONE_MOE       = auto()
+    GRANITE          = auto()
+    GRANITE_MOE      = auto()
+    GRANITE_HYBRID   = auto()
+    CHAMELEON        = auto()
+    WAVTOKENIZER_DEC = auto()
+    PLM              = auto()
+    BAILINGMOE       = auto()
+    BAILINGMOE2      = auto()
+    DOTS1            = auto()
+    ARCEE            = auto()
+    AFMOE            = auto()
+    ERNIE4_5         = auto()
+    ERNIE4_5_MOE     = auto()
+    HUNYUAN_MOE      = auto()
+    HUNYUAN_DENSE    = auto()
+    SMOLLM3          = auto()
+    GPT_OSS          = auto()
+    LFM2             = auto()
+    LFM2MOE          = auto()
+    DREAM            = auto()
+    SMALLTHINKER     = auto()
+    LLADA            = auto()
+    LLADA_MOE        = auto()
+    SEED_OSS         = auto()
+    GROVEMOE         = auto()
+    APERTUS          = auto()
+    COGVLM           = auto()
+    MINIMAXM2        = auto()
+    RND1             = auto()
+    PANGU_EMBED      = auto()
+    MISTRAL3         = auto()
+    PADDLEOCR        = auto()
+    MIMO2            = auto()
+    STEP35           = auto()
+    LLAMA_EMBED      = auto()
+    MAINCODER        = auto()
+    KIMI_LINEAR      = auto()
+>>>>>>> d0f6ad73cc4492a995fead92497de0cc1bc8169a
 
 
 class VISION_PROJECTOR_TYPE(IntEnum):
@@ -640,6 +764,7 @@ class MODEL_TENSOR(IntEnum):
     DEC_CROSS_ATTN_V = auto()
     DEC_CROSS_ATTN_OUT = auto()
     DEC_CROSS_ATTN_REL_B = auto()
+<<<<<<< HEAD
     DEC_FFN_NORM = auto()
     DEC_FFN_GATE = auto()
     DEC_FFN_DOWN = auto()
@@ -686,6 +811,55 @@ class MODEL_TENSOR(IntEnum):
     INDEXER_PROJ = auto()
     INDEXER_ATTN_K = auto()
     INDEXER_ATTN_Q_B = auto()
+=======
+    DEC_FFN_NORM         = auto()
+    DEC_FFN_GATE         = auto()
+    DEC_FFN_DOWN         = auto()
+    DEC_FFN_UP           = auto()
+    DEC_OUTPUT_NORM      = auto()
+    ENC_ATTN_NORM        = auto()
+    ENC_ATTN_Q           = auto()
+    ENC_ATTN_K           = auto()
+    ENC_ATTN_V           = auto()
+    ENC_ATTN_OUT         = auto()
+    ENC_ATTN_REL_B       = auto()
+    ENC_FFN_NORM         = auto()
+    ENC_FFN_GATE         = auto()
+    ENC_FFN_DOWN         = auto()
+    ENC_FFN_UP           = auto()
+    ENC_OUTPUT_NORM      = auto()
+    CLS                  = auto() # classifier
+    CLS_OUT              = auto() # classifier output projection
+    CLS_NORM             = auto()
+    CONV1D               = auto()
+    CONVNEXT_DW          = auto()
+    CONVNEXT_NORM        = auto()
+    CONVNEXT_PW1         = auto()
+    CONVNEXT_PW2         = auto()
+    CONVNEXT_GAMMA       = auto()
+    POSNET_CONV1         = auto()
+    POSNET_CONV2         = auto()
+    POSNET_NORM          = auto()
+    POSNET_NORM1         = auto()
+    POSNET_NORM2         = auto()
+    POSNET_ATTN_NORM     = auto()
+    POSNET_ATTN_Q        = auto()
+    POSNET_ATTN_K        = auto()
+    POSNET_ATTN_V        = auto()
+    POSNET_ATTN_OUT      = auto()
+    SHORTCONV_CONV       = auto()
+    SHORTCONV_INPROJ     = auto()
+    SHORTCONV_OUTPROJ    = auto()
+    VISEXP_ATTN_QKV      = auto()
+    VISEXP_ATTN_OUT      = auto()
+    VISEXP_GATE          = auto()
+    VISEXP_DOWN          = auto()
+    VISEXP_UP            = auto()
+    INDEXER_K_NORM       = auto()
+    INDEXER_PROJ         = auto()
+    INDEXER_ATTN_K       = auto()
+    INDEXER_ATTN_Q_B     = auto()
+>>>>>>> d0f6ad73cc4492a995fead92497de0cc1bc8169a
     # vision
     V_MMPROJ = auto()
     V_MMPROJ_FC = auto()
@@ -803,6 +977,7 @@ class MODEL_TENSOR(IntEnum):
 
 
 MODEL_ARCH_NAMES: dict[MODEL_ARCH, str] = {
+<<<<<<< HEAD
     MODEL_ARCH.MMPROJ: "clip",  # dummy arch for clip.cpp
     MODEL_ARCH.LLAMA: "llama",
     MODEL_ARCH.LLAMA4: "llama4",
@@ -922,6 +1097,129 @@ MODEL_ARCH_NAMES: dict[MODEL_ARCH, str] = {
     MODEL_ARCH.LLAMA_EMBED: "llama-embed",
     MODEL_ARCH.MAINCODER: "maincoder",
     MODEL_ARCH.KIMI_LINEAR: "kimi-linear",
+=======
+    MODEL_ARCH.MMPROJ:           "clip", # dummy arch for clip.cpp
+    MODEL_ARCH.LLAMA:            "llama",
+    MODEL_ARCH.LLAMA4:           "llama4",
+    MODEL_ARCH.DECI:             "deci",
+    MODEL_ARCH.FALCON:           "falcon",
+    MODEL_ARCH.BAICHUAN:         "baichuan",
+    MODEL_ARCH.GROK:             "grok",
+    MODEL_ARCH.GPT2:             "gpt2",
+    MODEL_ARCH.GPTJ:             "gptj",
+    MODEL_ARCH.GPTNEOX:          "gptneox",
+    MODEL_ARCH.MPT:              "mpt",
+    MODEL_ARCH.STARCODER:        "starcoder",
+    MODEL_ARCH.REFACT:           "refact",
+    MODEL_ARCH.BERT:             "bert",
+    MODEL_ARCH.MODERN_BERT:      "modern-bert",
+    MODEL_ARCH.NOMIC_BERT:       "nomic-bert",
+    MODEL_ARCH.NOMIC_BERT_MOE:   "nomic-bert-moe",
+    MODEL_ARCH.NEO_BERT:         "neo-bert",
+    MODEL_ARCH.JINA_BERT_V2:     "jina-bert-v2",
+    MODEL_ARCH.JINA_BERT_V3:     "jina-bert-v3",
+    MODEL_ARCH.BLOOM:            "bloom",
+    MODEL_ARCH.STABLELM:         "stablelm",
+    MODEL_ARCH.QWEN:             "qwen",
+    MODEL_ARCH.QWEN2:            "qwen2",
+    MODEL_ARCH.QWEN2MOE:         "qwen2moe",
+    MODEL_ARCH.QWEN2VL:          "qwen2vl",
+    MODEL_ARCH.QWEN3:            "qwen3",
+    MODEL_ARCH.QWEN3MOE:         "qwen3moe",
+    MODEL_ARCH.QWEN3NEXT:        "qwen3next",
+    MODEL_ARCH.QWEN3VL:          "qwen3vl",
+    MODEL_ARCH.QWEN3VLMOE:       "qwen3vlmoe",
+    MODEL_ARCH.QWEN35:           "qwen35",
+    MODEL_ARCH.QWEN35MOE:        "qwen35moe",
+    MODEL_ARCH.PHI2:             "phi2",
+    MODEL_ARCH.PHI3:             "phi3",
+    MODEL_ARCH.PHIMOE:           "phimoe",
+    MODEL_ARCH.PLAMO:            "plamo",
+    MODEL_ARCH.PLAMO2:           "plamo2",
+    MODEL_ARCH.PLAMO3:           "plamo3",
+    MODEL_ARCH.CODESHELL:        "codeshell",
+    MODEL_ARCH.ORION:            "orion",
+    MODEL_ARCH.INTERNLM2:        "internlm2",
+    MODEL_ARCH.MINICPM:          "minicpm",
+    MODEL_ARCH.MINICPM3:         "minicpm3",
+    MODEL_ARCH.GEMMA:            "gemma",
+    MODEL_ARCH.GEMMA2:           "gemma2",
+    MODEL_ARCH.GEMMA3:           "gemma3",
+    MODEL_ARCH.GEMMA3N:          "gemma3n",
+    MODEL_ARCH.GEMMA_EMBEDDING:  "gemma-embedding",
+    MODEL_ARCH.STARCODER2:       "starcoder2",
+    MODEL_ARCH.RWKV6:            "rwkv6",
+    MODEL_ARCH.RWKV6QWEN2:       "rwkv6qwen2",
+    MODEL_ARCH.RWKV7:            "rwkv7",
+    MODEL_ARCH.ARWKV7:           "arwkv7",
+    MODEL_ARCH.MAMBA:            "mamba",
+    MODEL_ARCH.MAMBA2:           "mamba2",
+    MODEL_ARCH.JAMBA:            "jamba",
+    MODEL_ARCH.XVERSE:           "xverse",
+    MODEL_ARCH.COMMAND_R:        "command-r",
+    MODEL_ARCH.COHERE2:          "cohere2",
+    MODEL_ARCH.DBRX:             "dbrx",
+    MODEL_ARCH.OLMO:             "olmo",
+    MODEL_ARCH.OLMO2:            "olmo2",
+    MODEL_ARCH.OLMOE:            "olmoe",
+    MODEL_ARCH.OPENELM:          "openelm",
+    MODEL_ARCH.ARCTIC:           "arctic",
+    MODEL_ARCH.DEEPSEEK:         "deepseek",
+    MODEL_ARCH.DEEPSEEK2:        "deepseek2",
+    MODEL_ARCH.CHATGLM:          "chatglm",
+    MODEL_ARCH.GLM4:             "glm4",
+    MODEL_ARCH.GLM4_MOE:         "glm4moe",
+    MODEL_ARCH.GLM_DSA:          "glm-dsa",
+    MODEL_ARCH.BITNET:           "bitnet",
+    MODEL_ARCH.T5:               "t5",
+    MODEL_ARCH.T5ENCODER:        "t5encoder",
+    MODEL_ARCH.JAIS:             "jais",
+    MODEL_ARCH.JAIS2:            "jais2",
+    MODEL_ARCH.NEMOTRON:         "nemotron",
+    MODEL_ARCH.NEMOTRON_H:       "nemotron_h",
+    MODEL_ARCH.NEMOTRON_H_MOE:   "nemotron_h_moe",
+    MODEL_ARCH.EXAONE:           "exaone",
+    MODEL_ARCH.EXAONE4:          "exaone4",
+    MODEL_ARCH.EXAONE_MOE:       "exaone-moe",
+    MODEL_ARCH.GRANITE:          "granite",
+    MODEL_ARCH.GRANITE_MOE:      "granitemoe",
+    MODEL_ARCH.GRANITE_HYBRID:   "granitehybrid",
+    MODEL_ARCH.CHAMELEON:        "chameleon",
+    MODEL_ARCH.WAVTOKENIZER_DEC: "wavtokenizer-dec",
+    MODEL_ARCH.PLM:              "plm",
+    MODEL_ARCH.BAILINGMOE:       "bailingmoe",
+    MODEL_ARCH.BAILINGMOE2:      "bailingmoe2",
+    MODEL_ARCH.DOTS1:            "dots1",
+    MODEL_ARCH.ARCEE:            "arcee",
+    MODEL_ARCH.AFMOE:            "afmoe",
+    MODEL_ARCH.ERNIE4_5:         "ernie4_5",
+    MODEL_ARCH.ERNIE4_5_MOE:     "ernie4_5-moe",
+    MODEL_ARCH.FALCON_H1:        "falcon-h1",
+    MODEL_ARCH.HUNYUAN_MOE:      "hunyuan-moe",
+    MODEL_ARCH.HUNYUAN_DENSE:    "hunyuan-dense",
+    MODEL_ARCH.SMOLLM3:          "smollm3",
+    MODEL_ARCH.GPT_OSS:          "gpt-oss",
+    MODEL_ARCH.LFM2:             "lfm2",
+    MODEL_ARCH.LFM2MOE:          "lfm2moe",
+    MODEL_ARCH.DREAM:            "dream",
+    MODEL_ARCH.SMALLTHINKER:     "smallthinker",
+    MODEL_ARCH.LLADA:            "llada",
+    MODEL_ARCH.LLADA_MOE:        "llada-moe",
+    MODEL_ARCH.SEED_OSS:         "seed_oss",
+    MODEL_ARCH.GROVEMOE:         "grovemoe",
+    MODEL_ARCH.APERTUS:          "apertus",
+    MODEL_ARCH.MINIMAXM2:        "minimax-m2",
+    MODEL_ARCH.COGVLM:           "cogvlm",
+    MODEL_ARCH.RND1:             "rnd1",
+    MODEL_ARCH.PANGU_EMBED:      "pangu-embedded",
+    MODEL_ARCH.MISTRAL3:         "mistral3",
+    MODEL_ARCH.PADDLEOCR:        "paddleocr",
+    MODEL_ARCH.MIMO2:            "mimo2",
+    MODEL_ARCH.STEP35:           "step35",
+    MODEL_ARCH.LLAMA_EMBED:      "llama-embed",
+    MODEL_ARCH.MAINCODER:        "maincoder",
+    MODEL_ARCH.KIMI_LINEAR:      "kimi-linear",
+>>>>>>> d0f6ad73cc4492a995fead92497de0cc1bc8169a
 }
 
 VISION_PROJECTOR_TYPE_NAMES: dict[VISION_PROJECTOR_TYPE, str] = {
@@ -935,6 +1233,7 @@ VISION_PROJECTOR_TYPE_NAMES: dict[VISION_PROJECTOR_TYPE, str] = {
 }
 
 TENSOR_NAMES: dict[MODEL_TENSOR, str] = {
+<<<<<<< HEAD
     MODEL_TENSOR.TOKEN_EMBD: "token_embd",
     MODEL_TENSOR.TOKEN_EMBD_NORM: "token_embd_norm",
     MODEL_TENSOR.TOKEN_TYPES: "token_types",
@@ -1122,6 +1421,196 @@ TENSOR_NAMES: dict[MODEL_TENSOR, str] = {
     MODEL_TENSOR.INDEXER_PROJ: "blk.{bid}.indexer.proj",
     MODEL_TENSOR.INDEXER_ATTN_K: "blk.{bid}.indexer.attn_k",
     MODEL_TENSOR.INDEXER_ATTN_Q_B: "blk.{bid}.indexer.attn_q_b",
+=======
+    MODEL_TENSOR.TOKEN_EMBD:                "token_embd",
+    MODEL_TENSOR.TOKEN_EMBD_NORM:           "token_embd_norm",
+    MODEL_TENSOR.TOKEN_TYPES:               "token_types",
+    MODEL_TENSOR.POS_EMBD:                  "position_embd",
+    MODEL_TENSOR.OUTPUT_NORM:               "output_norm",
+    MODEL_TENSOR.OUTPUT:                    "output",
+    MODEL_TENSOR.DENSE_2_OUT:                "dense_2", # embeddinggemma 2_Dense
+    MODEL_TENSOR.DENSE_3_OUT:                "dense_3", # embeddinggemma 2_Dense
+    MODEL_TENSOR.ROPE_FREQS:                "rope_freqs",
+    MODEL_TENSOR.ROPE_FACTORS_LONG:         "rope_factors_long",
+    MODEL_TENSOR.ROPE_FACTORS_SHORT:        "rope_factors_short",
+    MODEL_TENSOR.ATTN_NORM:                 "blk.{bid}.attn_norm",
+    MODEL_TENSOR.ATTN_NORM_2:               "blk.{bid}.attn_norm_2",
+    MODEL_TENSOR.ATTN_QKV:                  "blk.{bid}.attn_qkv",
+    MODEL_TENSOR.ATTN_Q:                    "blk.{bid}.attn_q",
+    MODEL_TENSOR.ATTN_K:                    "blk.{bid}.attn_k",
+    MODEL_TENSOR.ATTN_V:                    "blk.{bid}.attn_v",
+    MODEL_TENSOR.ATTN_OUT:                  "blk.{bid}.attn_output",
+    MODEL_TENSOR.ATTN_ROT_EMBD:             "blk.{bid}.attn_rot_embd",
+    MODEL_TENSOR.ATTN_SINKS:                "blk.{bid}.attn_sinks",
+    MODEL_TENSOR.ATTN_GATE:                 "blk.{bid}.attn_gate",
+    MODEL_TENSOR.ATTN_Q_NORM:               "blk.{bid}.attn_q_norm",
+    MODEL_TENSOR.ATTN_K_NORM:               "blk.{bid}.attn_k_norm",
+    MODEL_TENSOR.ATTN_OUT_NORM:             "blk.{bid}.attn_output_norm",
+    MODEL_TENSOR.ATTN_POST_NORM:            "blk.{bid}.post_attention_norm",
+    MODEL_TENSOR.FFN_GATE_INP:              "blk.{bid}.ffn_gate_inp",
+    MODEL_TENSOR.FFN_GATE_INP_SHEXP:        "blk.{bid}.ffn_gate_inp_shexp",
+    MODEL_TENSOR.FFN_NORM:                  "blk.{bid}.ffn_norm",
+    MODEL_TENSOR.FFN_PRE_NORM:              "blk.{bid}.ffn_norm",
+    MODEL_TENSOR.FFN_POST_NORM:             "blk.{bid}.post_ffw_norm",
+    MODEL_TENSOR.FFN_GATE:                  "blk.{bid}.ffn_gate",
+    MODEL_TENSOR.FFN_DOWN:                  "blk.{bid}.ffn_down",
+    MODEL_TENSOR.FFN_UP:                    "blk.{bid}.ffn_up",
+    MODEL_TENSOR.FFN_GATE_SHEXP:            "blk.{bid}.ffn_gate_shexp",
+    MODEL_TENSOR.FFN_DOWN_SHEXP:            "blk.{bid}.ffn_down_shexp",
+    MODEL_TENSOR.FFN_UP_SHEXP:              "blk.{bid}.ffn_up_shexp",
+    MODEL_TENSOR.FFN_GATE_CHEXP:            "blk.{bid}.ffn_gate_chexps",
+    MODEL_TENSOR.FFN_DOWN_CHEXP:            "blk.{bid}.ffn_down_chexps",
+    MODEL_TENSOR.FFN_UP_CHEXP:              "blk.{bid}.ffn_up_chexps",
+    MODEL_TENSOR.FFN_ACT:                   "blk.{bid}.ffn",
+    MODEL_TENSOR.FFN_NORM_EXP:              "blk.{bid}.ffn_norm_exps",
+    MODEL_TENSOR.FFN_GATE_EXP:              "blk.{bid}.ffn_gate_exps",
+    MODEL_TENSOR.FFN_DOWN_EXP:              "blk.{bid}.ffn_down_exps",
+    MODEL_TENSOR.FFN_UP_EXP:                "blk.{bid}.ffn_up_exps",
+    MODEL_TENSOR.FFN_EXP_PROBS_B:           "blk.{bid}.exp_probs_b",
+    MODEL_TENSOR.LAYER_OUT_NORM:            "blk.{bid}.layer_output_norm",
+    MODEL_TENSOR.PER_LAYER_TOKEN_EMBD:      "per_layer_token_embd",           # gemma3n
+    MODEL_TENSOR.PER_LAYER_MODEL_PROJ:      "per_layer_model_proj",           # gemma3n
+    MODEL_TENSOR.PER_LAYER_PROJ_NORM:       "per_layer_proj_norm",            # gemma3n
+    MODEL_TENSOR.ALTUP_UNEMBD_PROJ:         "altup_unembd_proj",              # gemma3n
+    MODEL_TENSOR.ALTUP_PROJ:                "altup_proj",                     # gemma3n
+    MODEL_TENSOR.PER_LAYER_INP_GATE:        "blk.{bid}.inp_gate",             # gemma3n
+    MODEL_TENSOR.PER_LAYER_PROJ:            "blk.{bid}.proj",                 # gemma3n
+    MODEL_TENSOR.PER_LAYER_POST_NORM:       "blk.{bid}.post_norm",            # gemma3n
+    MODEL_TENSOR.ALTUP_CORRECT_COEF:        "blk.{bid}.altup_correct_coef",   # gemma3n
+    MODEL_TENSOR.ALTUP_CORRECT_SCALE:       "blk.{bid}.altup_correct_scale",  # gemma3n
+    MODEL_TENSOR.ALTUP_PREDICT_COEF:        "blk.{bid}.altup_predict_coef",   # gemma3n
+    MODEL_TENSOR.ALTUP_ROUTER:              "blk.{bid}.altup_router",         # gemma3n
+    MODEL_TENSOR.ALTUP_ROUTER_NORM:         "blk.{bid}.altup_router_norm",    # gemma3n
+    MODEL_TENSOR.LAUREL_L:                  "blk.{bid}.laurel_l",             # gemma3n
+    MODEL_TENSOR.LAUREL_R:                  "blk.{bid}.laurel_r",             # gemma3n
+    MODEL_TENSOR.LAUREL_POST_NORM:          "blk.{bid}.laurel_post_norm",     # gemma3n
+    MODEL_TENSOR.SSM_IN:                    "blk.{bid}.ssm_in",
+    MODEL_TENSOR.SSM_CONV1D:                "blk.{bid}.ssm_conv1d",
+    MODEL_TENSOR.SSM_X:                     "blk.{bid}.ssm_x",
+    MODEL_TENSOR.SSM_DT:                    "blk.{bid}.ssm_dt",
+    MODEL_TENSOR.SSM_DT_NORM:               "blk.{bid}.ssm_dt_norm",
+    MODEL_TENSOR.SSM_A:                     "blk.{bid}.ssm_a",
+    MODEL_TENSOR.SSM_B_NORM:                "blk.{bid}.ssm_b_norm",
+    MODEL_TENSOR.SSM_C_NORM:                "blk.{bid}.ssm_c_norm",
+    MODEL_TENSOR.SSM_D:                     "blk.{bid}.ssm_d",
+    MODEL_TENSOR.SSM_NORM:                  "blk.{bid}.ssm_norm",
+    MODEL_TENSOR.SSM_OUT:                   "blk.{bid}.ssm_out",
+    MODEL_TENSOR.SSM_ALPHA:                 "blk.{bid}.ssm_alpha",            # qwen3.5
+    MODEL_TENSOR.SSM_BETA_ALPHA:            "blk.{bid}.ssm_ba",
+    MODEL_TENSOR.SSM_CONV1D_Q:              "blk.{bid}.ssm_conv1d_q",         # Kimi Linear
+    MODEL_TENSOR.SSM_CONV1D_K:              "blk.{bid}.ssm_conv1d_k",         # Kimi Linear
+    MODEL_TENSOR.SSM_CONV1D_V:              "blk.{bid}.ssm_conv1d_v",         # Kimi Linear
+    MODEL_TENSOR.SSM_F_A:                   "blk.{bid}.ssm_f_a",              # Kimi Linear
+    MODEL_TENSOR.SSM_F_B:                   "blk.{bid}.ssm_f_b",              # Kimi Linear
+    MODEL_TENSOR.SSM_BETA:                  "blk.{bid}.ssm_beta",             # Kimi Linear qwen3.5
+    MODEL_TENSOR.SSM_G_A:                   "blk.{bid}.ssm_g_a",              # Kimi Linear
+    MODEL_TENSOR.SSM_G_B:                   "blk.{bid}.ssm_g_b",              # Kimi Linear
+    MODEL_TENSOR.TIME_MIX_W0:               "blk.{bid}.time_mix_w0",
+    MODEL_TENSOR.TIME_MIX_W1:               "blk.{bid}.time_mix_w1",
+    MODEL_TENSOR.TIME_MIX_W2:               "blk.{bid}.time_mix_w2",
+    MODEL_TENSOR.TIME_MIX_A0:               "blk.{bid}.time_mix_a0",
+    MODEL_TENSOR.TIME_MIX_A1:               "blk.{bid}.time_mix_a1",
+    MODEL_TENSOR.TIME_MIX_A2:               "blk.{bid}.time_mix_a2",
+    MODEL_TENSOR.TIME_MIX_V0:               "blk.{bid}.time_mix_v0",
+    MODEL_TENSOR.TIME_MIX_V1:               "blk.{bid}.time_mix_v1",
+    MODEL_TENSOR.TIME_MIX_V2:               "blk.{bid}.time_mix_v2",
+    MODEL_TENSOR.TIME_MIX_G1:               "blk.{bid}.time_mix_g1",
+    MODEL_TENSOR.TIME_MIX_G2:               "blk.{bid}.time_mix_g2",
+    MODEL_TENSOR.TIME_MIX_K_K:              "blk.{bid}.time_mix_k_k",
+    MODEL_TENSOR.TIME_MIX_K_A:              "blk.{bid}.time_mix_k_a",
+    MODEL_TENSOR.TIME_MIX_R_K:              "blk.{bid}.time_mix_r_k",
+    MODEL_TENSOR.TIME_MIX_LERP_X:           "blk.{bid}.time_mix_lerp_x",
+    MODEL_TENSOR.TIME_MIX_LERP_K:           "blk.{bid}.time_mix_lerp_k",
+    MODEL_TENSOR.TIME_MIX_LERP_V:           "blk.{bid}.time_mix_lerp_v",
+    MODEL_TENSOR.TIME_MIX_LERP_R:           "blk.{bid}.time_mix_lerp_r",
+    MODEL_TENSOR.TIME_MIX_LERP_G:           "blk.{bid}.time_mix_lerp_g",
+    MODEL_TENSOR.TIME_MIX_LERP_FUSED:       "blk.{bid}.time_mix_lerp_fused",
+    MODEL_TENSOR.TIME_MIX_LERP_W:           "blk.{bid}.time_mix_lerp_w",
+    MODEL_TENSOR.TIME_MIX_FIRST:            "blk.{bid}.time_mix_first",
+    MODEL_TENSOR.TIME_MIX_DECAY:            "blk.{bid}.time_mix_decay",
+    MODEL_TENSOR.TIME_MIX_DECAY_W1:         "blk.{bid}.time_mix_decay_w1",
+    MODEL_TENSOR.TIME_MIX_DECAY_W2:         "blk.{bid}.time_mix_decay_w2",
+    MODEL_TENSOR.TIME_MIX_KEY:              "blk.{bid}.time_mix_key",
+    MODEL_TENSOR.TIME_MIX_VALUE:            "blk.{bid}.time_mix_value",
+    MODEL_TENSOR.TIME_MIX_RECEPTANCE:       "blk.{bid}.time_mix_receptance",
+    MODEL_TENSOR.TIME_MIX_GATE:             "blk.{bid}.time_mix_gate",
+    MODEL_TENSOR.TIME_MIX_LN:               "blk.{bid}.time_mix_ln",
+    MODEL_TENSOR.TIME_MIX_OUTPUT:           "blk.{bid}.time_mix_output",
+    MODEL_TENSOR.CHANNEL_MIX_LERP_K:        "blk.{bid}.channel_mix_lerp_k",
+    MODEL_TENSOR.CHANNEL_MIX_LERP_R:        "blk.{bid}.channel_mix_lerp_r",
+    MODEL_TENSOR.CHANNEL_MIX_KEY:           "blk.{bid}.channel_mix_key",
+    MODEL_TENSOR.CHANNEL_MIX_RECEPTANCE:    "blk.{bid}.channel_mix_receptance",
+    MODEL_TENSOR.CHANNEL_MIX_VALUE:         "blk.{bid}.channel_mix_value",
+    MODEL_TENSOR.ATTN_Q_A:                  "blk.{bid}.attn_q_a",
+    MODEL_TENSOR.ATTN_Q_B:                  "blk.{bid}.attn_q_b",
+    MODEL_TENSOR.ATTN_KV_A_MQA:             "blk.{bid}.attn_kv_a_mqa",
+    MODEL_TENSOR.ATTN_KV_B:                 "blk.{bid}.attn_kv_b",
+    MODEL_TENSOR.ATTN_K_B:                  "blk.{bid}.attn_k_b",
+    MODEL_TENSOR.ATTN_V_B:                  "blk.{bid}.attn_v_b",
+    MODEL_TENSOR.ATTN_Q_A_NORM:             "blk.{bid}.attn_q_a_norm",
+    MODEL_TENSOR.ATTN_KV_A_NORM:            "blk.{bid}.attn_kv_a_norm",
+    MODEL_TENSOR.ATTN_SUB_NORM:             "blk.{bid}.attn_sub_norm",
+    MODEL_TENSOR.FFN_SUB_NORM:              "blk.{bid}.ffn_sub_norm",
+    MODEL_TENSOR.DEC_ATTN_NORM:             "dec.blk.{bid}.attn_norm",
+    MODEL_TENSOR.DEC_ATTN_Q:                "dec.blk.{bid}.attn_q",
+    MODEL_TENSOR.DEC_ATTN_K:                "dec.blk.{bid}.attn_k",
+    MODEL_TENSOR.DEC_ATTN_V:                "dec.blk.{bid}.attn_v",
+    MODEL_TENSOR.DEC_ATTN_OUT:              "dec.blk.{bid}.attn_o",
+    MODEL_TENSOR.DEC_ATTN_REL_B:            "dec.blk.{bid}.attn_rel_b",
+    MODEL_TENSOR.DEC_CROSS_ATTN_NORM:       "dec.blk.{bid}.cross_attn_norm",
+    MODEL_TENSOR.DEC_CROSS_ATTN_Q:          "dec.blk.{bid}.cross_attn_q",
+    MODEL_TENSOR.DEC_CROSS_ATTN_K:          "dec.blk.{bid}.cross_attn_k",
+    MODEL_TENSOR.DEC_CROSS_ATTN_V:          "dec.blk.{bid}.cross_attn_v",
+    MODEL_TENSOR.DEC_CROSS_ATTN_OUT:        "dec.blk.{bid}.cross_attn_o",
+    MODEL_TENSOR.DEC_CROSS_ATTN_REL_B:      "dec.blk.{bid}.cross_attn_rel_b",
+    MODEL_TENSOR.DEC_FFN_NORM:              "dec.blk.{bid}.ffn_norm",
+    MODEL_TENSOR.DEC_FFN_GATE:              "dec.blk.{bid}.ffn_gate",
+    MODEL_TENSOR.DEC_FFN_DOWN:              "dec.blk.{bid}.ffn_down",
+    MODEL_TENSOR.DEC_FFN_UP:                "dec.blk.{bid}.ffn_up",
+    MODEL_TENSOR.DEC_OUTPUT_NORM:           "dec.output_norm",
+    MODEL_TENSOR.ENC_ATTN_NORM:             "enc.blk.{bid}.attn_norm",
+    MODEL_TENSOR.ENC_ATTN_Q:                "enc.blk.{bid}.attn_q",
+    MODEL_TENSOR.ENC_ATTN_K:                "enc.blk.{bid}.attn_k",
+    MODEL_TENSOR.ENC_ATTN_V:                "enc.blk.{bid}.attn_v",
+    MODEL_TENSOR.ENC_ATTN_OUT:              "enc.blk.{bid}.attn_o",
+    MODEL_TENSOR.ENC_ATTN_REL_B:            "enc.blk.{bid}.attn_rel_b",
+    MODEL_TENSOR.ENC_FFN_NORM:              "enc.blk.{bid}.ffn_norm",
+    MODEL_TENSOR.ENC_FFN_GATE:              "enc.blk.{bid}.ffn_gate",
+    MODEL_TENSOR.ENC_FFN_DOWN:              "enc.blk.{bid}.ffn_down",
+    MODEL_TENSOR.ENC_FFN_UP:                "enc.blk.{bid}.ffn_up",
+    MODEL_TENSOR.ENC_OUTPUT_NORM:           "enc.output_norm",
+    MODEL_TENSOR.CLS:                       "cls",
+    MODEL_TENSOR.CLS_OUT:                   "cls.output",
+    MODEL_TENSOR.CLS_NORM:                  "cls.norm",
+    MODEL_TENSOR.CONV1D:                    "conv1d",
+    MODEL_TENSOR.CONVNEXT_DW:               "convnext.{bid}.dw",
+    MODEL_TENSOR.CONVNEXT_NORM:             "convnext.{bid}.norm",
+    MODEL_TENSOR.CONVNEXT_PW1:              "convnext.{bid}.pw1",
+    MODEL_TENSOR.CONVNEXT_PW2:              "convnext.{bid}.pw2",
+    MODEL_TENSOR.CONVNEXT_GAMMA:            "convnext.{bid}.gamma",
+    MODEL_TENSOR.POSNET_CONV1:              "posnet.{bid}.conv1",
+    MODEL_TENSOR.POSNET_CONV2:              "posnet.{bid}.conv2",
+    MODEL_TENSOR.POSNET_NORM:               "posnet.{bid}.norm",
+    MODEL_TENSOR.POSNET_NORM1:              "posnet.{bid}.norm1",
+    MODEL_TENSOR.POSNET_NORM2:              "posnet.{bid}.norm2",
+    MODEL_TENSOR.POSNET_ATTN_NORM:          "posnet.{bid}.attn_norm",
+    MODEL_TENSOR.POSNET_ATTN_Q:             "posnet.{bid}.attn_q",
+    MODEL_TENSOR.POSNET_ATTN_K:             "posnet.{bid}.attn_k",
+    MODEL_TENSOR.POSNET_ATTN_V:             "posnet.{bid}.attn_v",
+    MODEL_TENSOR.POSNET_ATTN_OUT:           "posnet.{bid}.attn_output",
+    MODEL_TENSOR.SHORTCONV_CONV:            "blk.{bid}.shortconv.conv",
+    MODEL_TENSOR.SHORTCONV_INPROJ:          "blk.{bid}.shortconv.in_proj",
+    MODEL_TENSOR.SHORTCONV_OUTPROJ:         "blk.{bid}.shortconv.out_proj",
+    MODEL_TENSOR.VISEXP_ATTN_QKV:           "blk.{bid}.vis_attn_qkv",
+    MODEL_TENSOR.VISEXP_ATTN_OUT:           "blk.{bid}.vis_attn_output",
+    MODEL_TENSOR.VISEXP_GATE:               "blk.{bid}.vis_gate",
+    MODEL_TENSOR.VISEXP_DOWN:               "blk.{bid}.vis_down",
+    MODEL_TENSOR.VISEXP_UP:                 "blk.{bid}.vis_up",
+    MODEL_TENSOR.INDEXER_K_NORM:            "blk.{bid}.indexer.k_norm",
+    MODEL_TENSOR.INDEXER_PROJ:              "blk.{bid}.indexer.proj",
+    MODEL_TENSOR.INDEXER_ATTN_K:            "blk.{bid}.indexer.attn_k",
+    MODEL_TENSOR.INDEXER_ATTN_Q_B:          "blk.{bid}.indexer.attn_q_b",
+>>>>>>> d0f6ad73cc4492a995fead92497de0cc1bc8169a
     # vision
     MODEL_TENSOR.V_MMPROJ: "mm.{bid}",
     MODEL_TENSOR.V_MMPROJ_FC: "mm.model.fc",
@@ -1513,6 +2002,7 @@ MODEL_TENSORS: dict[MODEL_ARCH, list[MODEL_TENSOR]] = {
         MODEL_TENSOR.FFN_NORM,
         MODEL_TENSOR.CLS,
         MODEL_TENSOR.CLS_OUT,
+        MODEL_TENSOR.CLS_NORM,
     ],
     MODEL_ARCH.NOMIC_BERT: [
         MODEL_TENSOR.TOKEN_EMBD,
@@ -2820,6 +3310,19 @@ MODEL_TENSORS: dict[MODEL_ARCH, list[MODEL_TENSOR]] = {
         MODEL_TENSOR.FFN_GATE,
         MODEL_TENSOR.FFN_UP,
     ],
+    MODEL_ARCH.JAIS2: [
+        MODEL_TENSOR.TOKEN_EMBD,
+        MODEL_TENSOR.OUTPUT_NORM,
+        MODEL_TENSOR.OUTPUT,
+        MODEL_TENSOR.ATTN_NORM,
+        MODEL_TENSOR.ATTN_Q,
+        MODEL_TENSOR.ATTN_K,
+        MODEL_TENSOR.ATTN_V,
+        MODEL_TENSOR.ATTN_OUT,
+        MODEL_TENSOR.FFN_NORM,
+        MODEL_TENSOR.FFN_DOWN,
+        MODEL_TENSOR.FFN_UP,
+    ],
     MODEL_ARCH.NEMOTRON: [
         MODEL_TENSOR.TOKEN_EMBD,
         MODEL_TENSOR.OUTPUT_NORM,
@@ -3161,6 +3664,20 @@ MODEL_TENSORS: dict[MODEL_ARCH, list[MODEL_TENSOR]] = {
         MODEL_TENSOR.FFN_EXP_PROBS_B,
     ],
     MODEL_ARCH.ERNIE4_5: [
+        MODEL_TENSOR.TOKEN_EMBD,
+        MODEL_TENSOR.OUTPUT_NORM,
+        MODEL_TENSOR.OUTPUT,
+        MODEL_TENSOR.ATTN_NORM,
+        MODEL_TENSOR.ATTN_Q,
+        MODEL_TENSOR.ATTN_K,
+        MODEL_TENSOR.ATTN_V,
+        MODEL_TENSOR.ATTN_OUT,
+        MODEL_TENSOR.FFN_NORM,
+        MODEL_TENSOR.FFN_GATE,
+        MODEL_TENSOR.FFN_DOWN,
+        MODEL_TENSOR.FFN_UP,
+    ],
+    MODEL_ARCH.PADDLEOCR: [
         MODEL_TENSOR.TOKEN_EMBD,
         MODEL_TENSOR.OUTPUT_NORM,
         MODEL_TENSOR.OUTPUT,
@@ -3839,6 +4356,7 @@ class VisionProjectorType:
     VOXTRAL = "voxtral"
     LFM2 = "lfm2"
     KIMIVL = "kimivl"
+    PADDLEOCR = "paddleocr"
     KIMIK25 = "kimik25"
     LIGHTONOCR = "lightonocr"
     COGVLM = "cogvlm"
